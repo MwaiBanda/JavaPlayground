@@ -1,6 +1,6 @@
 package DesignPatterns.Singleton;
 
-public class Singleton {
+final public class Singleton {
     private static Singleton sharedInstance = null;
     public void process(){
         System.out.println("Processed");
