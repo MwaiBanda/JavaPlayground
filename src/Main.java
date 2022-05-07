@@ -26,8 +26,7 @@ public class Main {
         });
         System.out.print("\nEven Numbers: ");
         myList.forEach(num -> {
-            if (num % 2 == 0)
-                System.out.print(num);
+            System.out.print((num % 2 == 0) ? String.format("%d", num) : "");
         });
         System.out.print("\nOdd Numbers: ");
         myList.forEach(num -> {
@@ -43,9 +42,6 @@ public class Main {
         intPairCollector.forEach( row -> {
             System.out.printf("%d, %d\n", row.get(0), row.get(1));
         });
-
-
-
 
     }
 }
