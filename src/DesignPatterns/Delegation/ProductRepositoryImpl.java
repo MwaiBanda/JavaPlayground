@@ -2,7 +2,7 @@ package DesignPatterns.Delegation;
 
 import java.util.List;
 
-final public class ProductRepositoryImpl implements ProductRepository {
+public final class ProductRepositoryImpl implements ProductRepository {
     @Override
     public void getRecommended(int id, FetchResult onCompletion) {
         if (id < 0)

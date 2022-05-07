@@ -2,7 +2,7 @@ package DesignPatterns.Delegation;
 
 import java.util.List;
 
-final public class ProductService {
+public final class ProductService {
     private ProductRepository productRepository;
     public ProductService(ProductRepository productRepository) {
         this.productRepository = productRepository;
