@@ -15,9 +15,29 @@ public class Main {
         Main obj = new Main();
         obj.setX(10);
         int a = 2, b = 4;
-        obj.sum(a, b, c -> {
-            System.out.printf("The sum of %d & %d is %d\n", a, b, c);
+        obj.positiveSum(a - 5, b, new Callback() {
+            @Override
+            public void onCompletion(int c) {
+                System.out.printf("The sum of %d & %d is %d", a, b, c);
+            }
+
+            @Override
+            public void onFailure(String error) {
+                System.out.println(error);
+            }
         });
+        obj.positiveSum(a, b, new Callback() {
+            @Override
+            public void onCompletion(int c) {
+                System.out.printf("The sum of %d & %d is %d\n", a, b, c);
+            }
+
+            @Override
+            public void onFailure(String error) {
+                System.out.println(error);
+            }
+        });
+
         System.out.printf("The value of x is %d\n%n", obj.getX());
 
         List<Integer> myList = new ArrayList<>();
@@ -47,10 +67,14 @@ public class Main {
         });
 
     }
-    public  void sum(int a, int b, Callback callback) {
-        callback.onCompletion(a + b);
+    public  void positiveSum(int a, int b, Callback callback) {
+        if (a < 0 || b < 0)
+            callback.onFailure("Enter positive numbers only");
+        else
+            callback.onCompletion(a + b);
     }
     interface Callback {
         public void onCompletion(int c);
+        public void onFailure(String error);
     }
 }
