@@ -1,3 +1,7 @@
+import DesignPatterns.Delegation.ProductRepositoryImpl;
+import DesignPatterns.Delegation.ProductService;
+import DesignPatterns.Singleton.Singleton;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -65,6 +69,13 @@ public class Main {
         intPairCollector.forEach( row -> {
             System.out.printf("%d, %d\n", row.get(0), row.get(1));
         });
+
+        ProductRepositoryImpl productRepositoryImpl = new ProductRepositoryImpl();
+        ProductService service = new ProductService(productRepositoryImpl);
+        service.fetchRecommended();
+
+        Singleton x = Singleton.getInstance();
+        x.process();
 
     }
     public  void positiveSum(int a, int b, Callback callback) {
