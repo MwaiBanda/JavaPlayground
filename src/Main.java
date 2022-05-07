@@ -11,9 +11,8 @@ public class Main {
     public void setX(int x){
         this.x = x;
     }
-    public static void main(String args[]){
+    public static void main(String[] args){
         Main obj = new Main();
-        obj.setX(10);
         int a = 2, b = 4;
         obj.positiveSum(a - 5, b, new Callback() {
             @Override
@@ -38,6 +37,7 @@ public class Main {
             }
         });
 
+        obj.setX(10);
         System.out.printf("The value of x is %d\n%n", obj.getX());
 
         List<Integer> myList = new ArrayList<>();
