@@ -14,6 +14,7 @@ public class Main {
     public static void main(String args[]){
         Main obj = new Main();
         obj.setX(10);
+        obj.sum(2, 4, c -> System.out.printf("The sum of 2 & 4 is %d\n", c));
         System.out.printf("The value of x is %d\n%n", obj.getX());
 
         List<Integer> myList = new ArrayList<>();
@@ -42,5 +43,11 @@ public class Main {
             System.out.printf("%d, %d\n", row.get(0), row.get(1));
         });
 
+    }
+    public  void sum(int a, int b, Callback callback) {
+        callback.onCompletion(a + b);
+    }
+    interface Callback {
+        public void onCompletion(int c);
     }
 }
