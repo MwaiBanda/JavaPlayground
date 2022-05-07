@@ -30,8 +30,7 @@ public class Main {
         });
         System.out.print("\nOdd Numbers: ");
         myList.forEach(num -> {
-            if (num % 2 != 0)
-                System.out.print(num);
+            if (num % 2 != 0) System.out.print(num);
         });
 
         System.out.print("\nPairs:\n");
