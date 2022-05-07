@@ -72,7 +72,8 @@ public class Main {
 
         ProductRepositoryImpl productRepositoryImpl = new ProductRepositoryImpl();
         ProductService service = new ProductService(productRepositoryImpl);
-        service.fetchRecommended();
+        service.fetchRecommended(1);
+        service.fetchRecommended(-1);
 
         Singleton x = Singleton.getInstance();
         x.process();
