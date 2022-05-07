@@ -14,7 +14,10 @@ public class Main {
     public static void main(String args[]){
         Main obj = new Main();
         obj.setX(10);
-        obj.sum(2, 4, c -> System.out.printf("The sum of 2 & 4 is %d\n", c));
+        int a = 2, b = 4;
+        obj.sum(a, b, c -> {
+            System.out.printf("The sum of %d & %d is %d\n", a, b, c);
+        });
         System.out.printf("The value of x is %d\n%n", obj.getX());
 
         List<Integer> myList = new ArrayList<>();
