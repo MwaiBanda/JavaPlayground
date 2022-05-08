@@ -8,7 +8,6 @@ import DesignPatterns.Strategy.ConcreteStrategies.Quack.NoQuack;
 import DesignPatterns.Strategy.ConcreteStrategies.Quack.SimpleQuack;
 import DesignPatterns.Strategy.Ducks.AmericanCoot;
 import DesignPatterns.Strategy.Ducks.RubberDuckie;
-import Di.AmericanCootFactory;
 
 import java.util.ArrayList;
 import java.util.Arrays;

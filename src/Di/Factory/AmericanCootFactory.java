@@ -1,6 +1,7 @@
-package Di;
+package Di.Factory;
 
 import DesignPatterns.Strategy.Ducks.AmericanCoot;
+import Di.MainModule;
 import dagger.Component;
 
 @Component(modules = MainModule.class)
