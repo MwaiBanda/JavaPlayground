@@ -1,7 +1,13 @@
 import DesignPatterns.Delegation.ProductRepositoryImpl;
 import DesignPatterns.Delegation.ProductService;
 import DesignPatterns.Singleton.Singleton;
+import DesignPatterns.Strategy.ConcreteStrategies.Display.DisplayGraphically;
+import DesignPatterns.Strategy.ConcreteStrategies.Fly.NoFlying;
+import DesignPatterns.Strategy.ConcreteStrategies.Fly.SimpleFlying;
+import DesignPatterns.Strategy.ConcreteStrategies.Quack.NoQuack;
+import DesignPatterns.Strategy.ConcreteStrategies.Quack.SimpleQuack;
 import DesignPatterns.Strategy.Ducks.AmericanCoot;
+import DesignPatterns.Strategy.Ducks.RubberDuckie;
 import Di.AmericanCootFactory;
 
 import java.util.ArrayList;
@@ -78,7 +84,24 @@ public class Main {
         service.fetchRecommended(1);
         service.fetchRecommended(-1);
 
+        DisplayGraphically displayGraphically = new DisplayGraphically();
+        SimpleFlying simpleFlying = new SimpleFlying();
+        SimpleQuack simpleQuack = new SimpleQuack();
+        NoFlying noFlying = new NoFlying();
+        NoQuack noQuack = new NoQuack();
 
+        AmericanCoot americanCoot = new AmericanCoot(displayGraphically, simpleFlying, simpleQuack);
+        RubberDuckie rubberDuckie = new RubberDuckie(displayGraphically, noFlying, noQuack);
+
+        System.out.println("\nAmerican Coot");
+        americanCoot.display();
+        americanCoot.fly();
+        americanCoot.quack();
+
+        System.out.println("\nRubber Duckie");
+        rubberDuckie.display();
+        rubberDuckie.fly();
+        rubberDuckie.quack();
 
         Singleton x = Singleton.getInstance();
         x.process();

@@ -12,7 +12,6 @@ import javax.inject.Inject;
 import javax.inject.Singleton;
 
 public final class AmericanCoot extends Duck {
-
     @Inject
     public AmericanCoot(DisplayGraphically displayBehaviour, SimpleFlying flyBehaviour, SimpleQuack quackBehaviour) {
         super(displayBehaviour, flyBehaviour, quackBehaviour);
