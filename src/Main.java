@@ -77,6 +77,7 @@ public class Main {
         intPairCollector.forEach( row -> {
             System.out.printf("%d, %d\n", row.get(0), row.get(1));
         });
+
         /* Design Patterns  */
         /* Delegation */
         ProductRepositoryImpl productRepositoryImpl = new ProductRepositoryImpl();
@@ -84,6 +85,7 @@ public class Main {
         service.fetchRecommended(1);
         service.fetchRecommended(-1);
 
+        /* Strategy */
         DisplayGraphically displayGraphically = new DisplayGraphically();
         SimpleFlying simpleFlying = new SimpleFlying();
         SimpleQuack simpleQuack = new SimpleQuack();
@@ -103,9 +105,11 @@ public class Main {
         rubberDuckie.fly();
         rubberDuckie.quack();
 
+        /* Singleton */
         Singleton x = Singleton.getInstance();
         x.process();
 
+        /* Builder */
         Car mercedes = new Car.Builder("Mercedes Benz", "AMG GT 63")
                 .year(2021)
                 .color("Black")
