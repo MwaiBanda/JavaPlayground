@@ -1,9 +1,12 @@
 package DesignPatterns.Delegation;
 
+import javax.inject.Inject;
 import java.util.List;
 
 public final class ProductService {
-    private ProductRepository productRepository;
+     @Inject ProductRepository productRepository;
+
+    @Inject
     public ProductService(ProductRepository productRepository) {
         this.productRepository = productRepository;
     }

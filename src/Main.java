@@ -1,6 +1,8 @@
 import DesignPatterns.Delegation.ProductRepositoryImpl;
 import DesignPatterns.Delegation.ProductService;
 import DesignPatterns.Singleton.Singleton;
+import DesignPatterns.Strategy.Ducks.AmericanCoot;
+import Di.AmericanCootFactory;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -69,14 +71,18 @@ public class Main {
         intPairCollector.forEach( row -> {
             System.out.printf("%d, %d\n", row.get(0), row.get(1));
         });
-
+        /* Design Patterns  */
+        /* Delegation */
         ProductRepositoryImpl productRepositoryImpl = new ProductRepositoryImpl();
         ProductService service = new ProductService(productRepositoryImpl);
         service.fetchRecommended(1);
         service.fetchRecommended(-1);
 
+
+
         Singleton x = Singleton.getInstance();
         x.process();
+
 
     }
     public  void positiveSum(int a, int b, Callback callback) {
