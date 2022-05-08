@@ -5,8 +5,7 @@ import DesignPatterns.Strategy.AbstractStrategies.IFlyBehaviour;
 import DesignPatterns.Strategy.AbstractStrategies.IQuackBehaviour;
 import DesignPatterns.Strategy.Duck;
 
-public class RubberDuckie extends Duck {
-
+public final class RubberDuckie extends Duck {
     public RubberDuckie(IDisplayBehaviour displayBehaviour, IFlyBehaviour flyBehaviour, IQuackBehaviour quackBehaviour) {
         super(displayBehaviour, flyBehaviour, quackBehaviour);
     }

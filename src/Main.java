@@ -1,3 +1,4 @@
+import DesignPatterns.Builder.Car;
 import DesignPatterns.Delegation.ProductRepositoryImpl;
 import DesignPatterns.Delegation.ProductService;
 import DesignPatterns.Singleton.Singleton;
@@ -105,6 +106,19 @@ public class Main {
         Singleton x = Singleton.getInstance();
         x.process();
 
+        Car mercedes = new Car.Builder("Mercedes Benz", "AMG GT 63")
+                .year(2021)
+                .color("Black")
+                .build();
+
+        Car astonMartin = new Car.Builder("Aston Martin", "DB11")
+                .color("Orange")
+                .year(2022)
+                .license("NZ-0977868")
+                .build();
+
+        System.out.printf("\n%s %s\n", mercedes.getMake(), mercedes.getModel());
+        System.out.printf("%s %s\n", astonMartin.getMake(), astonMartin.getModel());
 
     }
     public  void positiveSum(int a, int b, Callback callback) {

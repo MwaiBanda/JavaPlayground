@@ -5,8 +5,7 @@ import DesignPatterns.Strategy.AbstractStrategies.IFlyBehaviour;
 import DesignPatterns.Strategy.AbstractStrategies.IQuackBehaviour;
 import DesignPatterns.Strategy.Duck;
 
-public class BlackBelliedWhistlingDuck extends Duck {
-
+public final class BlackBelliedWhistlingDuck extends Duck {
     public BlackBelliedWhistlingDuck(IDisplayBehaviour displayBehaviour, IFlyBehaviour flyBehaviour, IQuackBehaviour quackBehaviour) {
         super(displayBehaviour, flyBehaviour, quackBehaviour);
     }

@@ -3,7 +3,7 @@ package DesignPatterns.Singleton;
 public final class Singleton {
     private static Singleton sharedInstance = null;
     public void process(){
-        System.out.println("Processed");
+        System.out.println("\n[SINGLETON] Processed");
     }
     private Singleton(){
 
