@@ -9,10 +9,12 @@ import DesignPatterns.Strategy.ConcreteStrategies.Quack.NoQuack;
 import DesignPatterns.Strategy.ConcreteStrategies.Quack.SimpleQuack;
 import DesignPatterns.Strategy.Ducks.AmericanCoot;
 import DesignPatterns.Strategy.Ducks.RubberDuckie;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Main {
     int x;
@@ -23,7 +25,7 @@ public class Main {
     public void setX(int x){
         this.x = x;
     }
-    public static void main(String[] args){
+    public static void main(String @Nullable [] args){
         Main obj = new Main();
         int a = 2, b = 4;
         obj.positiveSum(a - 5, b, new Callback() {
@@ -120,9 +122,35 @@ public class Main {
                 .year(2022)
                 .license("NZ-0977868")
                 .build();
+        Car mclaren = new Car.Builder("", "")
+                .color("Orange")
+                .year(2022)
+                .license("NZ-0977868")
+                .build();
 
         System.out.printf("\n%s %s\n", mercedes.getMake(), mercedes.getModel());
-        System.out.printf("%s %s\n", astonMartin.getMake(), astonMartin.getModel());
+        System.out.printf(
+                "%s %s\nColor: %s\nYear: %d\nLicence: %s\n",
+                astonMartin.getMake(),
+                astonMartin.getModel(),
+                astonMartin.getColor(),
+                astonMartin.getYear(),
+                astonMartin.getLicense()
+        );
+        /* Array methods */
+        List<Integer> integers = Arrays.asList(1, 2, 3 ,4, 5);
+        List<String> carNames = Arrays.asList(mercedes, astonMartin)
+                .stream()
+                .map(c -> c.getMake())
+                .collect(Collectors.toList());
+        int sum = integers.stream().reduce( 0, (y,z) -> y + z, Integer::sum);
+        List<Integer> numbersLessThanThree = integers.stream()
+                .filter(num -> num < 3)
+                .collect(Collectors.toList());
+
+        System.out.println(sum);
+        System.out.println(carNames);
+        System.out.println(numbersLessThanThree);
 
     }
     public  void positiveSum(int a, int b, Callback callback) {
